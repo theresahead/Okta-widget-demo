@@ -3,7 +3,7 @@ import { OktaAuth } from "@okta/okta-auth-js";
 
 const oktaSignIn = new OktaSignIn({
   baseUrl: "https://dev-49618240.okta.com",
-  clientId: "0oa333x206aE9FgUc5d7",
+  clientId: "process.env.VUE_APP_CLIENT_ID",
   redirectUri: "http://localhost:8080/login/callback",
   authParams: {
     pkce: true,
@@ -18,7 +18,7 @@ const oktaSignIn = new OktaSignIn({
 
 const oktaAuth = new OktaAuth({
   issuer: "https://dev-49618240.okta.com/oauth2/default",
-  clientId: "0oa333x206aE9FgUc5d7",
+  clientId: "process.env.VUE_APP_CLIENT_ID",
   redirectUri: window.location.origin + "/login/callback",
   scopes: ["openid", "profile", "email"],
 });
